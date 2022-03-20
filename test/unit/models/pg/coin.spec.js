@@ -42,6 +42,16 @@ describe('Model:coin', () => {
     });
 
     const filterCoin = coin.filterKeys();
-    expect(Object.keys(filterCoin).length).to.eq(3);
+    expect(Object.keys(filterCoin).length).to.eq(4);
+  });
+
+  it('Should create by createCoin', async () => {
+    const payload = {
+      name: "Blockasset",
+      code: "block"
+    }
+    const coin = await Models.Coin.createCoin(payload);
+
+    expect(coin.code).to.eq(payload.code);
   });
 });

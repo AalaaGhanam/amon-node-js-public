@@ -239,6 +239,10 @@ const Utils = {
 
     return str;
   },
+
+  lessThanOneHourAgo(date) {
+    return moment(date).isAfter(moment().subtract(1, 'hours'));
+  },
 };
 
 module.exports = Utils;

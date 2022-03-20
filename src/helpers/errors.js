@@ -92,6 +92,11 @@ const ERRORS = [
     status: 413,
     description: 'The files you are trying to upload are too big.',
   },
+  {
+    code: 'coin_code_exists',
+    status: 409,
+    description: 'The property "code" of the coin model should be unique.',
+  },
 
   // Internal
   {

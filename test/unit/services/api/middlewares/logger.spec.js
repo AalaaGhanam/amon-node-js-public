@@ -66,6 +66,34 @@ describe('Middleware: Logger', () => {
     expect(loginfo.args[0][1]).to.deep.eq(Object.assign({ service: 'api:logger' }, ctx.requestInfo));
   });
 
+
+
+  it('run next', async () => {
+    const next = sinon.stub();
+    const query = { a: 1, password: 'password' };
+    const ctx = {
+      request: {
+        path: 'path',
+        method: 'OPTIONS',
+        query,
+        ip: 'ip',
+        route: 'route',
+        url: 'url',
+        host: 'host',
+        protocol: 'protocol',
+        get: sandbox.stub().callsFake((arg) => `${arg}1`),
+      },
+      response: {
+        set: sandbox.stub(),
+      },
+      status: 100,
+    };
+
+    await LoggerMiddleware(ctx, next);
+
+    expect(next.calledWith()).to.be.true;
+  });
+
   it('should log device info', async () => {
     const loginfo = sandbox.stub(logger, 'verbose');
 
