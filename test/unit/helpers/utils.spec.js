@@ -510,7 +510,7 @@ describe('Helpers: Utils', () => {
   });
 
   it('Should check if date is less than one hour ago', () => {
-    expect(Utils.lessThanOneHourAgo("2022-03-19 09:03:39.467+00")).to.be.eq(false);
-    expect(Utils.lessThanOneHourAgo("2022-03-17 22:03:39.467+00")).to.be.eq(false);
+    expect(Utils.lessThanOneHourAgo('2022-03-19 09:03:39.467+00')).to.be.eq(false);
+    expect(Utils.lessThanOneHourAgo('2022-03-17 22:03:39.467+00')).to.be.eq(false);
   });
 });

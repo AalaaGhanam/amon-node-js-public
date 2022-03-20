@@ -15,12 +15,12 @@ module.exports = {
     await transaction.sequelize.query(sql, { raw: true, transaction });
   },
 
-  async down () {
+  async down() {
     /**
      * Add reverting commands here.
      *
      * Example:
      * await queryInterface.dropTable('users');
      */
-  }
+  },
 };

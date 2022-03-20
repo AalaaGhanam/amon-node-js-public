@@ -43,9 +43,9 @@ describe('Controller: Coin', () => {
   describe('createCoin', () => {
     it('should add new coin', async () => {
       const payload = {
-        name: "Blockasset",
-        code: "block"
-      }
+        name: 'Blockasset',
+        code: 'block',
+      };
       const coin = await CoinController.createCoin(payload);
 
       expect(coin.code.toLowerCase()).to.eq(payload.code.toLowerCase());
@@ -53,9 +53,9 @@ describe('Controller: Coin', () => {
 
     it('should fail add coin by existed code', async () => {
       const payload = {
-        name: "Bitcoin",
-        code: "BTC"
-      }
+        name: 'Bitcoin',
+        code: 'BTC',
+      };
       expect(CoinController.createCoin(payload)).to.be.rejectedWith(Error, 'coin_code_exists');
     });
   });

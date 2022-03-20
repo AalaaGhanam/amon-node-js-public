@@ -66,8 +66,6 @@ describe('Middleware: Logger', () => {
     expect(loginfo.args[0][1]).to.deep.eq(Object.assign({ service: 'api:logger' }, ctx.requestInfo));
   });
 
-
-
   it('run next', async () => {
     const next = sinon.stub();
     const query = { a: 1, password: 'password' };

@@ -8,7 +8,7 @@ const getConfigObject = (sourceConfig) => ({
   },
   COINGECKO: {
     COINGECKO_URL: configParser(sourceConfig, 'string', 'COINGECKO_URL', 'https://api.coingecko.com/api/v3/coins'),
-  }
+  },
 });
 
 module.exports = {

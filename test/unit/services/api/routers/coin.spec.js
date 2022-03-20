@@ -21,7 +21,7 @@ describe('Router: coin', () => {
 
   it('Should get getCoinByCode', async () => {
     const ctx = {
-      params: { coinCode: "BTC" },
+      params: { coinCode: 'BTC' },
     };
     await CoinRouter.getCoinByCode(ctx);
 
@@ -30,11 +30,11 @@ describe('Router: coin', () => {
 
   it('Should put createCoin', async () => {
     const ctx = {
-      request: { 
-        body: { 
-          "name": "Bitcoin",
-          "code": "DTR" 
-        }
+      request: {
+        body: {
+          name: 'Bitcoin',
+          code: 'DTR',
+        },
       },
     };
     await CoinRouter.createCoin(ctx);

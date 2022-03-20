@@ -24,7 +24,6 @@ const CoinRouter = {
   },
 
   async createCoin(ctx) {
-
     const payload = ctx.request.body;
 
     const formattedPayload = await validateParams(CoinRouter.schemaCreateCoin, payload);
